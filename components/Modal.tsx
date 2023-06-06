@@ -4,6 +4,7 @@ import { useState, Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { useModalStore } from '@/store/ModalStore'
 import { useBoardStore } from '@/store/BoardStore';
+import TaskTypeRadioGroup from './TaskTypeRadioGroup';
 
 
 function Modal() {
@@ -59,6 +60,12 @@ function Modal() {
                                 placeholder='Enter a task here...'
                                 className='w-full border border-gray-300 rounded-md outline-none p-5'
                                 />
+                            </div>
+
+                            <TaskTypeRadioGroup />
+
+                            <div>
+                                
                             </div>
 
                             {/*Radio group - Task Type*/}
