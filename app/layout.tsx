@@ -1,3 +1,4 @@
+import Modal from '@/components/Modal'
 import './globals.css'
 
 export const metadata = {
@@ -12,7 +13,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='bg-[#222222]'>{children}</body>
+      <body className='bg-[#222222]'>
+        {children}
+
+        <Modal />
+
+      </body>
     </html>
   )
 }
