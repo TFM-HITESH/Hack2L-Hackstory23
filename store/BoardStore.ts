@@ -14,8 +14,14 @@ interface BoardState {
     newTaskInput: string;
     newTaskType: TypedColumn;
     setNewTaskInput: (input: string) => void;
-    
+
     setNewTaskType: (columnId: TypedColumn) => void;
+
+    image: File | null;
+    setImage: (image: File | null ) => void;
+
+    //addTask: (todo:string, columnId: TypedColumn, image?:File | null) => void;
+    //deleteTask: (taskIndex:number , todoId : Todo, id: TypedColumn) => void;
 }
 
 export const useBoardStore = create<BoardState>((set) => ({
@@ -25,6 +31,7 @@ export const useBoardStore = create<BoardState>((set) => ({
   searchString: "",
   newTaskInput: "",
   newTaskType: "todo",
+  image: null,
   
   setSearchString: (searchString) => set({ searchString }),
   setNewTaskInput: (input: string) => set({newTaskInput: input}),
@@ -37,6 +44,7 @@ export const useBoardStore = create<BoardState>((set) => ({
 
   setBoardState: (board) => set({ board }), 
 
+  setImage: (image: File | null) => set({ image }),
   
 
   updateTodoInDB: async(todo, columnId) => {
@@ -51,6 +59,16 @@ export const useBoardStore = create<BoardState>((set) => ({
             status: columnId,
         }
     )
-  }
+  },
+
+  //addTask: async (todo: string, columnId: TypedColumn, image?:File|null) => {
+  //  let file = Image | undefined; 
+  //},
+
+  //deleteTask: (taskIndex:number , todoId : Todo, id: TypedColumn) => {
+  //
+  //}
+
+
 }));
 
